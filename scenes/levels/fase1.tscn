@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://6vtqdm4olbxl"]
+[gd_scene load_steps=14 format=3 uid="uid://6vtqdm4olbxl"]
 
 [ext_resource type="Texture2D" uid="uid://bl4ttxq0o76hh" path="res://assets/sprites/Foozle_2DT0008_GreenValley_Tileset_Pixel_Art.png" id="1_f125c"]
 [ext_resource type="Texture2D" uid="uid://b3uchj64mg1kx" path="res://assets/sprites/Textures-16.png" id="2_bnu8c"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cv50phyoc0usx" path="res://assets/sprites/8bit-water-currenty.png" id="4_051w3"]
 [ext_resource type="Texture2D" uid="uid://droebjka5urmv" path="res://assets/sprites/8bit-water-flat.png" id="5_745wh"]
 [ext_resource type="PackedScene" uid="uid://2cema2e8sv22" path="res://scenes/player/node_2d.tscn" id="6_745wh"]
+[ext_resource type="PackedScene" uid="uid://dstvh5rsi7meu" path="res://scenes/numeros.tscn" id="7_4bc74"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_745wh"]
 texture = ExtResource("1_f125c")
@@ -606,7 +607,8 @@ texture = ExtResource("4_051w3")
 texture = ExtResource("5_745wh")
 
 [sub_resource type="TileSet" id="TileSet_7irko"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/1 = SubResource("TileSetAtlasSource_4bc74")
 sources/2 = SubResource("TileSetAtlasSource_mffd4")
 sources/3 = SubResource("TileSetAtlasSource_7irko")
@@ -626,3 +628,6 @@ zoom = Vector2(1.8, 1.8)
 
 [node name="Node2D" parent="." instance=ExtResource("6_745wh")]
 position = Vector2(335, 377)
+
+[node name="Numeros" parent="." instance=ExtResource("7_4bc74")]
+position = Vector2(696, 338)

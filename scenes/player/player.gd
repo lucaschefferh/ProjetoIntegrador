@@ -31,8 +31,6 @@ func _update_animation(input_dir: float) -> void:
 		anim.flip_h = input_dir < 0
 
 	# definindo animação
-	if not is_on_floor():
-		anim.play("jump")
 	elif input_dir != 0:
 		anim.play("walk")
 	else:
