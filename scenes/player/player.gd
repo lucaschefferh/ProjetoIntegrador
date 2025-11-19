@@ -6,6 +6,8 @@ extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
 
+var numeros_coletados: Array = []
+
 func _physics_process(delta):
 	# gravidade
 	if not is_on_floor():
@@ -26,12 +28,19 @@ func _physics_process(delta):
 
 
 func _update_animation(input_dir: float) -> void:
-	# virando o sprite para esquerda/direita
 	if input_dir != 0:
+		# vira sprite
 		anim.flip_h = input_dir < 0
-
-	# definindo animação
-	elif input_dir != 0:
+		# toca walk
 		anim.play("walk")
 	else:
 		anim.play("idle")
+		
+func adicionar_numero(valor: int):
+	if numeros_coletados.size() >= 2:
+		print("Você já tem 2 números! Não pode coletar mais.")
+		return
+		
+	numeros_coletados.append(valor)
+	print("Coletados agora:", numeros_coletados)
+	Hud.set_coletados(numeros_coletados)

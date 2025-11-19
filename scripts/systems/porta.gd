@@ -1,13 +1,13 @@
 extends Area2D
 
 @export var proxima_fase: String = "res://scenes/levels/fase2.tscn"
-@export var resultado_necessario: int = 10
+@export var resultado_necessario: int = 11
 @export var quantidade_numeros: int = 2
 
 func _ready():
 	self.body_entered.connect(_on_body_entered)
-
-
+	Hud.set_objetivo(resultado_necessario, quantidade_numeros)
+	
 func _on_body_entered(body):
 	if not body.is_in_group("player"):
 		return
@@ -21,11 +21,9 @@ func _on_body_entered(body):
 
 
 func _combinacao_correta(numeros:Array) -> bool:
-	for i in numeros:
-		for j in numeros:
-			if i != j and (i + j) == resultado_necessario:
-				return true
-	return false
+	if numeros.size() < 2:
+		return false
+	return numeros[0] + numeros[1] == resultado_necessario
 
 
 func abrir_porta():

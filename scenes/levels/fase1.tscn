@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://6vtqdm4olbxl"]
+[gd_scene load_steps=15 format=3 uid="uid://6vtqdm4olbxl"]
 
 [ext_resource type="Texture2D" uid="uid://bl4ttxq0o76hh" path="res://assets/sprites/Foozle_2DT0008_GreenValley_Tileset_Pixel_Art.png" id="1_f125c"]
 [ext_resource type="Texture2D" uid="uid://b3uchj64mg1kx" path="res://assets/sprites/Textures-16.png" id="2_bnu8c"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bmky1u1gme6kn" path="res://scenes/porta.tscn" id="6_7irko"]
 [ext_resource type="PackedScene" uid="uid://2cema2e8sv22" path="res://scenes/player/node_2d.tscn" id="6_745wh"]
 [ext_resource type="PackedScene" uid="uid://dstvh5rsi7meu" path="res://scenes/numeros.tscn" id="7_4bc74"]
-[ext_resource type="PackedScene" uid="uid://xidx360i61vx" path="res://HUD.tscn" id="8_mffd4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_745wh"]
 texture = ExtResource("1_f125c")
@@ -617,23 +616,21 @@ sources/3 = SubResource("TileSetAtlasSource_7irko")
 sources/4 = SubResource("TileSetAtlasSource_8uqc6")
 sources/0 = SubResource("TileSetAtlasSource_745wh")
 
-[node name="Node2D" type="Node2D"]
+[node name="fase1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7irko")
 format = 2
 layer_0/tile_data = PackedInt32Array(1572882, 0, 0, 1572883, 0, 0, 1572884, 0, 0, 1572885, 0, 0, 1572886, 0, 0, 1572887, 0, 0, 1572888, 0, 0, 1572889, 0, 0, 1572890, 0, 0, 1572891, 0, 0, 1572892, 0, 0, 1572893, 0, 0, 1572894, 0, 0, 1572895, 0, 0, 1572896, 0, 0, 1572897, 0, 0, 1572898, 0, 0, 1572899, 0, 0, 1572900, 0, 0, 1572901, 0, 0, 1572902, 0, 0, 1572903, 0, 0, 1572904, 0, 0, 1572905, 0, 0, 1572906, 0, 0, 1572907, 0, 0, 1572908, 0, 0, 1572909, 0, 0, 1572910, 0, 0, 1572911, 0, 0, 1572912, 0, 0, 1572913, 0, 0, 1572914, 0, 0, 1572915, 0, 0, 1572916, 0, 0, 1572917, 0, 0, 1572918, 0, 0, 1572919, 0, 0, 1572920, 0, 0, 1572921, 0, 0, 327698, 655361, 30, 393234, 655361, 30, 458770, 655361, 30, 524306, 655361, 30, 589842, 655361, 30, 655378, 655361, 30, 720914, 655361, 30, 786450, 655361, 30, 851986, 655361, 30, 917522, 655361, 30, 983058, 655361, 30, 1048594, 655361, 30, 1114130, 655361, 30, 1179666, 655361, 30, 1245202, 655361, 30, 1310738, 655361, 30, 1376274, 655361, 30, 1441810, 655361, 30, 1507346, 655361, 30, 524307, 65536, 3, 524308, 65536, 3, 524309, 65536, 3, 524310, 65536, 3, 524311, 65536, 3, 524312, 65536, 3, 524313, 65536, 3, 524314, 65536, 3, 524315, 65536, 3, 524316, 65536, 3, 524317, 65536, 3, 524318, 65536, 3, 327737, 655361, 30, 393273, 655361, 30, 458809, 655361, 30, 524345, 655361, 30, 589881, 655361, 30, 655417, 655361, 30, 720953, 655361, 30, 786489, 655361, 30, 852025, 655361, 30, 917561, 655361, 30, 983097, 655361, 30, 1048633, 655361, 30, 1114169, 655361, 30, 1179705, 655361, 30, 1245241, 655361, 30, 1310777, 655361, 30, 1376313, 655361, 30, 1441849, 655361, 30, 1507385, 655361, 30, 1376281, 65536, 0, 1376282, 65536, 0, 1376283, 65536, 0, 1376284, 65536, 0, 1245215, 65536, 0, 1245216, 65536, 0, 1245217, 65536, 0, 1245218, 65536, 0, 1376297, 65536, 0, 1376298, 65536, 0, 1376299, 65536, 0, 1376300, 65536, 0, 1179694, 65536, 0, 1179695, 65536, 0, 1179696, 65536, 0, 1179697, 65536, 0, 983075, 65536, 0, 983076, 65536, 0, 983077, 65536, 0, 983078, 65536, 0, 983066, 65536, 0, 983065, 65536, 0, 983064, 65536, 0, 983063, 65536, 0, 917554, 65536, 0, 917555, 65536, 0, 917556, 65536, 0, 917557, 65536, 0, 1376307, 65536, 0, 1376308, 65536, 0, 1376309, 65536, 0, 1376310, 65536, 0, 655408, 65536, 0, 655407, 65536, 0, 655406, 65536, 0, 655405, 65536, 0, 720937, 65536, 0, 720936, 65536, 0, 720935, 65536, 0, 720934, 65536, 0, 786461, 65536, 0, 786462, 65536, 0, 786463, 65536, 0, 786464, 65536, 0)
 
-[node name="CanvasLayer" parent="TileMap" instance=ExtResource("8_mffd4")]
-
 [node name="Camera2D" type="Camera2D" parent="TileMap"]
 position = Vector2(606, 218)
 zoom = Vector2(1.8, 1.8)
 
-[node name="Area2D" parent="TileMap" instance=ExtResource("6_7irko")]
+[node name="Porta" parent="TileMap" instance=ExtResource("6_7irko")]
 position = Vector2(335, 112)
 
-[node name="Node2D" parent="." instance=ExtResource("6_745wh")]
+[node name="Player" parent="." instance=ExtResource("6_745wh")]
 position = Vector2(335, 377)
 
 [node name="Numeros" parent="." instance=ExtResource("7_4bc74")]
@@ -641,5 +638,13 @@ position = Vector2(701, 336)
 value = 5
 
 [node name="Numeros2" parent="." instance=ExtResource("7_4bc74")]
-position = Vector2(538, 302)
+position = Vector2(780, 289)
 value = 6
+
+[node name="Numeros3" parent="." instance=ExtResource("7_4bc74")]
+position = Vector2(761, 162)
+value = 15
+
+[node name="Numeros4" parent="." instance=ExtResource("7_4bc74")]
+position = Vector2(410, 242)
+value = 11
