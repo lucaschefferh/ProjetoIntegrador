@@ -26,22 +26,23 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
 func _update_animation(input_dir: float) -> void:
 	if input_dir != 0:
-		# vira sprite
 		anim.flip_h = input_dir < 0
-		# toca walk
 		anim.play("walk")
 	else:
 		anim.play("idle")
 		
 func adicionar_numero(valor: int):
+	# Limite de 2 números (slots do HUD)
 	if numeros_coletados.size() >= 2:
-		print("Você já tem 2 números! Não pode coletar mais.")
+		print("Inventário cheio! Você já tem 2 números.")
 		return
 		
 	numeros_coletados.append(valor)
 	print("Coletados agora:", numeros_coletados)
-	var hud = get_tree().current_scene.get_node("Hud")
-	hud.set_coletados(numeros_coletados)
+	
+	# Atualiza o HUD usando Grupo
+	var hud = get_tree().get_first_node_in_group("HUD")
+	if hud:
+		hud.set_coletados(numeros_coletados)
