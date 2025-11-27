@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://6vtqdm4olbxl"]
+[gd_scene load_steps=17 format=3 uid="uid://6vtqdm4olbxl"]
 
 [ext_resource type="Texture2D" uid="uid://bl4ttxq0o76hh" path="res://assets/sprites/Foozle_2DT0008_GreenValley_Tileset_Pixel_Art.png" id="1_f125c"]
 [ext_resource type="Texture2D" uid="uid://b3uchj64mg1kx" path="res://assets/sprites/Textures-16.png" id="2_bnu8c"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bmky1u1gme6kn" path="res://scenes/porta.tscn" id="6_7irko"]
 [ext_resource type="PackedScene" uid="uid://2cema2e8sv22" path="res://scenes/player/node_2d.tscn" id="6_745wh"]
 [ext_resource type="PackedScene" uid="uid://dstvh5rsi7meu" path="res://scenes/numeros.tscn" id="7_4bc74"]
+[ext_resource type="PackedScene" uid="uid://8c211m8g5oi4" path="res://scenes/HUD.tscn" id="9_7irko"]
+[ext_resource type="PackedScene" uid="uid://bfsumuu8jwoqr" path="res://scenes/main_menu/pause_menu.tscn" id="10_8uqc6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_745wh"]
 texture = ExtResource("1_f125c")
@@ -630,21 +632,25 @@ zoom = Vector2(1.8, 1.8)
 [node name="Porta" parent="TileMap" instance=ExtResource("6_7irko")]
 position = Vector2(335, 112)
 
-[node name="Player" parent="." instance=ExtResource("6_745wh")]
-position = Vector2(335, 377)
-
-[node name="Numeros" parent="." instance=ExtResource("7_4bc74")]
-position = Vector2(701, 336)
-value = 5
-
-[node name="Numeros2" parent="." instance=ExtResource("7_4bc74")]
+[node name="Numeros2" parent="TileMap" instance=ExtResource("7_4bc74")]
 position = Vector2(780, 289)
 value = 6
 
-[node name="Numeros3" parent="." instance=ExtResource("7_4bc74")]
+[node name="Numeros" parent="TileMap" instance=ExtResource("7_4bc74")]
+position = Vector2(701, 336)
+value = 5
+
+[node name="Numeros3" parent="TileMap" instance=ExtResource("7_4bc74")]
 position = Vector2(761, 162)
 value = 15
 
-[node name="Numeros4" parent="." instance=ExtResource("7_4bc74")]
+[node name="Numeros4" parent="TileMap" instance=ExtResource("7_4bc74")]
 position = Vector2(410, 242)
 value = 11
+
+[node name="Player" parent="." instance=ExtResource("6_745wh")]
+position = Vector2(335, 377)
+
+[node name="Hud" parent="." instance=ExtResource("9_7irko")]
+
+[node name="pause_menu" parent="." instance=ExtResource("10_8uqc6")]

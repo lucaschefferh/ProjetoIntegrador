@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://byg3luf01ca0o"]
+
+[ext_resource type="Script" uid="uid://kc4k55x6elun" path="res://scripts/ui/creditos.gd" id="1_1ybfg"]
+[ext_resource type="PackedScene" uid="uid://deev41c70twl5" path="res://scenes/main_menu/background.tscn" id="1_sg1qe"]
+[ext_resource type="FontFile" uid="uid://e8o0dvapgj8v" path="res://assets/fonts/ComicNeueSansID.ttf" id="3_pegux"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1mqp"]
+bg_color = Color(0.490196, 0.917647, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eun21"]
+bg_color = Color(0.168627, 0.690196, 0.839216, 1)
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nkeq"]
+bg_color = Color(0.298039, 0.811765, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_offset = Vector2(3, 3)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 641.0
+offset_bottom = 415.0
+script = ExtResource("1_1ybfg")
+
+[node name="Background" parent="." instance=ExtResource("1_sg1qe")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+offset_left = 161.0
+offset_top = 43.0
+offset_right = 932.0
+offset_bottom = 650.0
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]
+[font_size=40][b]CRÉDITOS[/b][/font_size]
+
+[b]Desenvolvedores[/b]
+Lucas Scheffer 
+Vitor Emanuel 
+
+[b]Engenheira de Requisitos[/b]
+Milena
+
+[b]Professor Orientador[/b]
+Dr. Agnaldo Costa
+
+[font_size=12]Desenvolvido com Godot Engine[/font_size]
+[/center]"
+fit_content = true
+
+[node name="Button_voltar" type="Button" parent="Background/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_pegux")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_n1mqp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eun21")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3nkeq")
+text = "Voltar"
+
+[connection signal="pressed" from="Background/VBoxContainer/Button_voltar" to="." method="_on_button_voltar_pressed"]

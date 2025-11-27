@@ -15,7 +15,7 @@ offset_bottom = 28.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.999993, 0.953325, 0.945289, 1)
 theme_override_fonts/font = ExtResource("2_fls4u")
-text = "Objetivo: ---"
+text = "Objetivo:"
 
 [node name="LabelColetados" type="Label" parent="."]
 anchors_preset = -1

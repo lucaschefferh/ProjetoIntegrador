@@ -43,4 +43,5 @@ func adicionar_numero(valor: int):
 		
 	numeros_coletados.append(valor)
 	print("Coletados agora:", numeros_coletados)
-	Hud.set_coletados(numeros_coletados)
+	var hud = get_tree().current_scene.get_node("Hud")
+	hud.set_coletados(numeros_coletados)

@@ -6,7 +6,8 @@ extends Area2D
 
 func _ready():
 	self.body_entered.connect(_on_body_entered)
-	Hud.set_objetivo(resultado_necessario, quantidade_numeros)
+	var hud = get_tree().current_scene.get_node("Hud")
+	hud.set_objetivo(resultado_necessario, quantidade_numeros)
 	
 func _on_body_entered(body):
 	if not body.is_in_group("player"):
