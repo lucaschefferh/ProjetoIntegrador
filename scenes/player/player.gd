@@ -4,6 +4,11 @@ extends CharacterBody2D
 @export var jump_force := -400.0
 @export var gravity := 900.0
 
+# --- CONFIGURAÇÃO DA MOCHILA ---
+# Padrão é 2. Na Fase 2, mude para 3 no Inspetor!
+@export var limite_mochila: int = 2 
+# -------------------------------
+
 @onready var anim = $AnimatedSprite2D
 
 var numeros_coletados: Array = []
@@ -26,6 +31,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+
 func _update_animation(input_dir: float) -> void:
 	if input_dir != 0:
 		anim.flip_h = input_dir < 0
@@ -33,16 +39,21 @@ func _update_animation(input_dir: float) -> void:
 	else:
 		anim.play("idle")
 		
+
 func adicionar_numero(valor: int):
-	# Limite de 2 números (slots do HUD)
-	if numeros_coletados.size() >= 2:
-		print("Inventário cheio! Você já tem 2 números.")
+	# Debug para ajudar a gente a ver o que está acontecendo
+	print("Tentando pegar. Tenho: ", numeros_coletados.size(), " | Limite da fase é: ", limite_mochila)
+	
+	# --- VERIFICAÇÃO ÚNICA E CORRETA ---
+	if numeros_coletados.size() >= limite_mochila:
+		print("Inventário cheio! Não cabe mais nada.")
 		return
+	# -----------------------------------
 		
 	numeros_coletados.append(valor)
-	print("Coletados agora:", numeros_coletados)
+	print("Sucesso! Coletados agora:", numeros_coletados)
 	
-	# Atualiza o HUD usando Grupo
+	# Atualiza o HUD
 	var hud = get_tree().get_first_node_in_group("HUD")
 	if hud:
 		hud.set_coletados(numeros_coletados)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dstvh5rsi7meu"]
 
 [ext_resource type="Script" uid="uid://cp4ouy8pk6e4l" path="res://scripts/numeros.gd" id="1_jlldy"]
-[ext_resource type="FontFile" uid="uid://bui34edwy5tog" path="res://assets/fonts/Pixel-Regular.ttf" id="2_jlldy"]
+[ext_resource type="FontFile" uid="uid://e8o0dvapgj8v" path="res://assets/fonts/ComicNeueSansID.ttf" id="2_jlldy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qd1rv"]
 radius = 14.0357
@@ -15,14 +15,15 @@ position = Vector2(-11, -13)
 shape = SubResource("CircleShape2D_qd1rv")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -28.0
-offset_top = -26.0
-offset_right = 22.0
-offset_bottom = 38.0
+offset_left = -19.0
+offset_top = -33.0
+offset_right = 31.0
+offset_bottom = 31.0
 theme_override_colors/font_color = Color(0.247059, 0.721569, 0.811765, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jlldy")
 theme_override_font_sizes/font_size = 32
-text = "5"
+text = "0
+"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

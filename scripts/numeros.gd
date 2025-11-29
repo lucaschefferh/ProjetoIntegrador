@@ -18,9 +18,9 @@ func _on_body_exited(body):
 
 func _process(delta):
 	if player_in_area and Input.is_action_just_pressed("interagir"):
-		# Player só coleta se tiver menos de 2 números
-		if player_in_area.numeros_coletados.size() < 2:
+	
+		if player_in_area.numeros_coletados.size() < player_in_area.limite_mochila:
 			player_in_area.adicionar_numero(value)
 			queue_free()
 		else:
-			print("Você já tem 2 números! Não pode coletar mais.")
+			print("Você já atingiu o limite da mochila!")

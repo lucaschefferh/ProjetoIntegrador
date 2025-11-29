@@ -10,7 +10,7 @@ func _ready():
 	sair.pressed.connect(_on_sair_pressed)
 
 func _on_jogar_pressed():
-	get_tree().change_scene_to_file("res://scenes/levels/fase1.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu/profile_menu.tscn")
 
 func _on_creditos_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu/creditos.tscn")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bn1xxdpmrqrd8"]
 
 [ext_resource type="Texture2D" uid="uid://bl4ttxq0o76hh" path="res://assets/sprites/Foozle_2DT0008_GreenValley_Tileset_Pixel_Art.png" id="1_8n88o"]
-[ext_resource type="PackedScene" uid="uid://2cema2e8sv22" path="res://scenes/player/node_2d.tscn" id="2_mre8e"]
+[ext_resource type="PackedScene" uid="uid://2cema2e8sv22" path="res://scenes/player/player.tscn" id="2_mre8e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mre8e"]
 texture = ExtResource("1_8n88o")

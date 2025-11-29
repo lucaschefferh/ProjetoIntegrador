@@ -18,6 +18,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalCanvasLayer="*res://scenes/main_menu/background.tscn"
+GameData="*res://scripts/systems/GameData.gd"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [global_group]
 

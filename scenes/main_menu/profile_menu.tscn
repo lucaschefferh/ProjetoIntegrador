@@ -1,0 +1,152 @@
+[gd_scene load_steps=10 format=3 uid="uid://de0lry5bswss0"]
+
+[ext_resource type="Script" uid="uid://bi5ydpyw371eb" path="res://scripts/systems/profile_menu.gd" id="1_6ssnp"]
+[ext_resource type="PackedScene" uid="uid://deev41c70twl5" path="res://scenes/main_menu/background.tscn" id="2_x66qu"]
+[ext_resource type="FontFile" uid="uid://e8o0dvapgj8v" path="res://assets/fonts/ComicNeueSansID.ttf" id="3_lbgmm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x66qu"]
+bg_color = Color(0, 0, 0, 0.588235)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdah1"]
+font = ExtResource("3_lbgmm")
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdah1"]
+bg_color = Color(0, 0, 0, 0.392157)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbgmm"]
+bg_color = Color(0.298039, 0.686275, 0.313726, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rue0k"]
+bg_color = Color(0.126695, 0.31463, 0.133533, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_huw7p"]
+bg_color = Color(0.180392, 0.490196, 0.196078, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 178.0
+offset_right = 650.0
+offset_bottom = 358.0
+script = ExtResource("1_6ssnp")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_x66qu")]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 1.64
+anchor_bottom = 1.457
+offset_left = -183.5
+offset_top = -132.0
+offset_right = -0.0400085
+offset_bottom = 26.73
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x66qu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Qual é seu nome?"
+label_settings = SubResource("LabelSettings_gdah1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lbgmm")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_gdah1")
+placeholder_text = "Digite aqui...."
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quantos anos você tem?"
+label_settings = SubResource("LabelSettings_gdah1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit2" type="LineEdit" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lbgmm")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_gdah1")
+placeholder_text = "Digite aqui...."
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_lbgmm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rue0k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_huw7p")
+text = "Confirmar"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
