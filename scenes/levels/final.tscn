@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://dnux5itk1yxnx"]
+
+[ext_resource type="Script" uid="uid://bo5e1gyh3bg11" path="res://scripts/ui/final.gd" id="1_dsnit"]
+[ext_resource type="PackedScene" uid="uid://deev41c70twl5" path="res://scenes/main_menu/background.tscn" id="2_gxsnh"]
+[ext_resource type="FontFile" uid="uid://e8o0dvapgj8v" path="res://assets/fonts/ComicNeueSansID.ttf" id="3_gxsnh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsnit"]
+bg_color = Color(0, 0, 0, 0.588235)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 40.0
+expand_margin_top = 40.0
+expand_margin_right = 40.0
+expand_margin_bottom = 40.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqvne"]
+font = ExtResource("3_gxsnh")
+font_size = 40
+font_color = Color(1, 0.843137, 0, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gxsnh"]
+font = ExtResource("3_gxsnh")
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxsnh"]
+bg_color = Color(0.490196, 0.917647, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqvne"]
+bg_color = Color(0.168627, 0.690196, 0.839216, 1)
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2dtb"]
+bg_color = Color(0.298039, 0.811765, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_offset = Vector2(3, 3)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 552.0
+offset_bottom = 329.0
+script = ExtResource("1_dsnit")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_gxsnh")]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 600.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsnit")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "VOCÊ VENCEU!!"
+label_settings = SubResource("LabelSettings_dqvne")
+
+[node name="LabelNome" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_gxsnh")
+
+[node name="LabelTentativas" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_gxsnh")
+
+[node name="LabelTempo" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_gxsnh")
+
+[node name="Button" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gxsnh")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxFlat_gxsnh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dqvne")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n2dtb")
+text = "Voltar
+"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

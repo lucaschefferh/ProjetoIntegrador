@@ -632,7 +632,7 @@ zoom = Vector2(1.8, 1.8)
 [node name="Porta" parent="TileMap" instance=ExtResource("6_nwk2d")]
 position = Vector2(903, 305)
 tipo_da_fase = 1
-proxima_fase = "res://scenes/levels/fase3.tscn"
+proxima_fase = "res://scenes/levels/final.tscn"
 resultado_necessario = 20
 quantidade_numeros = 3
 
