@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6pkaumwn5du"]
+
+[ext_resource type="Script" uid="uid://d2xcrurl2sal6" path="res://scripts/ui/ranking.gd" id="1_8aek7"]
+[ext_resource type="PackedScene" uid="uid://deev41c70twl5" path="res://scenes/main_menu/background.tscn" id="1_ncerl"]
+[ext_resource type="FontFile" uid="uid://e8o0dvapgj8v" path="res://assets/fonts/ComicNeueSansID.ttf" id="3_bu16p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncerl"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+bg_color = Color(0, 0, 0, 0.588235)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xht8p"]
+bg_color = Color(0.490196, 0.917647, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0b2rv"]
+bg_color = Color(0.168627, 0.690196, 0.839216, 1)
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge2yi"]
+bg_color = Color(0.298039, 0.811765, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_offset = Vector2(3, 3)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+script = ExtResource("1_8aek7")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("1_ncerl")]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ncerl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+
+[node name="ListaNomes" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bu16p")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_xht8p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0b2rv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ge2yi")
+text = "Voltar"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

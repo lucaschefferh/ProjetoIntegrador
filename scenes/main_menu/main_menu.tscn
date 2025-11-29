@@ -122,6 +122,17 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ob46e")
 theme_override_styles/normal = SubResource("StyleBoxFlat_uqeha")
 text = "Jogar"
 
+[node name="Button_Ranking" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ob46e")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_wem23")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3ovsr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5seab")
+text = "Ranking
+"
+
 [node name="Button_Creditos" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -141,3 +152,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_4xg86")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_thkx5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x2yjq")
 text = "Sair"
+
+[connection signal="pressed" from="VBoxContainer/Button_Ranking" to="." method="_on_button_ranking_pressed"]

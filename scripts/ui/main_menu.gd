@@ -12,6 +12,9 @@ func _ready():
 func _on_jogar_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu/profile_menu.tscn")
 
+func _on_button_ranking_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu/ranking.tscn")
+
 func _on_creditos_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu/creditos.tscn")
 
