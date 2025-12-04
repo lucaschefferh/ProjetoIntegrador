@@ -1,45 +1,46 @@
 extends CanvasLayer
 
-# --- REFERÊNCIAS AOS NÓS (Baseado na sua imagem) ---
+# --- REFERÊNCIAS AOS NÓS ---
 
 # Slot 1 e 2 (Sempre visíveis)
 @onready var label_slot1 = $MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/Label
 @onready var label_slot2 = $MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/Label
 
-# Slot 3 (Oculto na Fase 1) - Na sua imagem é o PanelContainer4
+# Slot 3 (Oculto na Fase 1) - Caminho específico da sua cena
 @onready var container_slot3 = $MarginContainer/VBoxContainer/HBoxContainer/PanelContainer4
 @onready var label_slot3 = $MarginContainer/VBoxContainer/HBoxContainer/PanelContainer4/Label
 
 # Operadores
-@onready var label_op1 = $MarginContainer/VBoxContainer/HBoxContainer/Label   # O sinal de +
-@onready var label_op2 = $MarginContainer/VBoxContainer/HBoxContainer/Label2  # O sinal de - (Oculto na Fase 1)
+@onready var label_op1 = $MarginContainer/VBoxContainer/HBoxContainer/Label   # Primeiro sinal
+@onready var label_op2 = $MarginContainer/VBoxContainer/HBoxContainer/Label2  # Segundo sinal (Label2)
 
 # Resultado (Objetivo)
 @onready var label_objetivo = $MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3/HBoxContainer/Label
 
+# Cronômetro
 @onready var label_tempo = $MarginContainer/VBoxContainer/HBoxContainer/PanelContainer5/HBoxContainer/LabelTempo
 
 func _ready():
-	# Garante que o HUD comece limpo e no estado correto
 	limpar_slots()
 
-# --- CONFIGURAÇÃO DA FASE ---
-# Essa função é chamada pela Porta para dizer se precisa de 2 ou 3 números
-func configurar_fase(valor_alvo: int, qtd_numeros: int):
+func configurar_fase(valor_alvo: int, qtd_numeros: int, sinais: Array = ["+"]):
 	label_objetivo.text = str(valor_alvo)
 	
-	# Se a fase exige 3 números (Fase 2: A + B - C)
+	if sinais.size() > 0:
+		label_op1.text = sinais[0]
+	
 	if qtd_numeros == 3:
-		label_op1.text = "+"
-		label_op2.text = "-"      # Define o segundo sinal como menos
-		
-		label_op2.visible = true       # Mostra o sinal de menos
+		# Se tivermos um segundo sinal na lista, usamos ele (ex: "-")
+		if sinais.size() > 1:
+			label_op2.text = sinais[1]
+		else:
+			label_op2.text = "-" # Padrão de segurança
+			
+		label_op2.visible = true       # Mostra o segundo sinal
 		container_slot3.visible = true # Mostra o terceiro quadrado
 		
-	# Se a fase é normal (Fase 1: A + B)
 	else:
-		label_op1.text = "+"
-		
+		# Modo Fase 1 (Apenas 2 números)
 		label_op2.visible = false       # Esconde o sinal extra
 		container_slot3.visible = false # Esconde o terceiro quadrado
 
@@ -79,6 +80,5 @@ func _process(delta):
 	var segundos = int(tempo) % 60
 	
 	# Atualiza o texto. "%02d" garante que fique "05" e não "5"
-	# IMPORTANTE: Garanta que 'label_tempo' está conectado corretamente lá no @onready!
 	if label_tempo:
 		label_tempo.text = "%02d:%02d" % [minutos, segundos]

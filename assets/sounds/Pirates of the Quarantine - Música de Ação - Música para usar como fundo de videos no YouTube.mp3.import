@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qg6c234pxur0"
+path="res://.godot/imported/Pirates of the Quarantine - Música de Ação - Música para usar como fundo de videos no YouTube.mp3-108b1b928912ed8505b31b95a4c9384b.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Pirates of the Quarantine - Música de Ação - Música para usar como fundo de videos no YouTube.mp3"
+dest_files=["res://.godot/imported/Pirates of the Quarantine - Música de Ação - Música para usar como fundo de videos no YouTube.mp3-108b1b928912ed8505b31b95a4c9384b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

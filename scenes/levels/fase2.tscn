@@ -632,16 +632,16 @@ zoom = Vector2(1.8, 1.8)
 [node name="Porta" parent="TileMap" instance=ExtResource("6_nwk2d")]
 position = Vector2(903, 305)
 tipo_da_fase = 1
-proxima_fase = "res://scenes/levels/final.tscn"
+proxima_fase = "res://scenes/levels/fase3.tscn"
 resultado_necessario = 20
 quantidade_numeros = 3
 
 [node name="Numeros2" parent="TileMap" instance=ExtResource("7_p800w")]
-position = Vector2(481, 191)
+position = Vector2(372, 258)
 value = 6
 
 [node name="Numeros" parent="TileMap" instance=ExtResource("7_p800w")]
-position = Vector2(556, 255)
+position = Vector2(555, 256)
 value = 5
 
 [node name="Numeros3" parent="TileMap" instance=ExtResource("7_p800w")]
@@ -651,6 +651,18 @@ value = 15
 [node name="Numeros4" parent="TileMap" instance=ExtResource("7_p800w")]
 position = Vector2(899, 382)
 value = 11
+
+[node name="Numeros5" parent="TileMap" instance=ExtResource("7_p800w")]
+position = Vector2(372, 161)
+value = 16
+
+[node name="Numeros6" parent="TileMap" instance=ExtResource("7_p800w")]
+position = Vector2(784, 258)
+value = 8
+
+[node name="Numeros7" parent="TileMap" instance=ExtResource("7_p800w")]
+position = Vector2(571, 132)
+value = 1
 
 [node name="Hud" parent="." instance=ExtResource("9_q845f")]
 

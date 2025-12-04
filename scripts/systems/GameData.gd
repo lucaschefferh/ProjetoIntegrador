@@ -28,6 +28,9 @@ func _process(delta):
 func iniciar_nova_partida():
 	tempo_fase = 0.0
 	tentativas = 0
+	jogando = false
+
+func iniciar_cronometro():
 	jogando = true
 
 func parar_cronometro():

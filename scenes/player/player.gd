@@ -49,7 +49,8 @@ func adicionar_numero(valor: int):
 		print("Inventário cheio! Não cabe mais nada.")
 		return
 	# -----------------------------------
-		
+	SoundManager.tocar_coleta()
+	
 	numeros_coletados.append(valor)
 	print("Sucesso! Coletados agora:", numeros_coletados)
 	

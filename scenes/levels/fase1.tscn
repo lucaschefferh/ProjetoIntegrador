@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://6vtqdm4olbxl"]
+[gd_scene load_steps=18 format=3 uid="uid://6vtqdm4olbxl"]
 
 [ext_resource type="Texture2D" uid="uid://bl4ttxq0o76hh" path="res://assets/sprites/Foozle_2DT0008_GreenValley_Tileset_Pixel_Art.png" id="1_f125c"]
+[ext_resource type="Script" uid="uid://cajrq3l28ls15" path="res://scripts/ui/nivel_manager.gd" id="1_mhm5o"]
 [ext_resource type="Texture2D" uid="uid://b3uchj64mg1kx" path="res://assets/sprites/Textures-16.png" id="2_bnu8c"]
 [ext_resource type="Texture2D" uid="uid://0837s6cta8g3" path="res://assets/sprites/door_closed.png" id="3_051w3"]
 [ext_resource type="Texture2D" uid="uid://cv50phyoc0usx" path="res://assets/sprites/8bit-water-currenty.png" id="4_051w3"]
@@ -619,6 +620,7 @@ sources/4 = SubResource("TileSetAtlasSource_8uqc6")
 sources/0 = SubResource("TileSetAtlasSource_745wh")
 
 [node name="fase1" type="Node2D"]
+script = ExtResource("1_mhm5o")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7irko")
@@ -642,12 +644,23 @@ position = Vector2(701, 336)
 value = 5
 
 [node name="Numeros3" parent="TileMap" instance=ExtResource("7_4bc74")]
-position = Vector2(761, 162)
+position = Vector2(845, 224)
 value = 15
 
 [node name="Numeros4" parent="TileMap" instance=ExtResource("7_4bc74")]
-position = Vector2(410, 242)
+position = Vector2(403, 238)
 value = 11
+
+[node name="Numeros5" parent="TileMap" instance=ExtResource("7_4bc74")]
+position = Vector2(443, 335)
+value = 7
+
+[node name="Numeros6" parent="TileMap" instance=ExtResource("7_4bc74")]
+position = Vector2(767, 161)
+
+[node name="Numeros7" parent="TileMap" instance=ExtResource("7_4bc74")]
+position = Vector2(650, 174)
+value = 4
 
 [node name="Player" parent="." instance=ExtResource("6_745wh")]
 position = Vector2(335, 377)

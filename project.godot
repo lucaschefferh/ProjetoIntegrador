@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 GlobalCanvasLayer="*res://scenes/main_menu/background.tscn"
 GameData="*res://scripts/systems/GameData.gd"
+BackgroundMusic="*res://scenes/main_menu/background_music.tscn"
+SoundManager="*res://scenes/main_menu/sound_manager.tscn"
 
 [display]
 
