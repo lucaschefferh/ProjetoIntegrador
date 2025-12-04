@@ -22,7 +22,7 @@ func _on_jogar_pressed():
 
 # Se você tiver um botão de ranking na cena, lembre de conectar o sinal dele também!
 func _on_button_ranking_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main_menu/score_screen.tscn") # Confira se o nome do arquivo é ranking ou score_screen
+	get_tree().change_scene_to_file("res://scenes/main_menu/ranking.tscn") # Confira se o nome do arquivo é ranking ou score_screen
 
 func _on_creditos_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu/creditos.tscn")
