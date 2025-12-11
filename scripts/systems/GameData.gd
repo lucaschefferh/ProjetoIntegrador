@@ -1,30 +1,28 @@
 extends Node
 
-# --- DADOS DA SESSÃO ATUAL (Temporários) ---
-# Estes dados mudam toda vez que alguém joga
+
+#variavies para salvar 
 var nome_jogador: String = ""
 var idade_jogador: int = 0
 var tempo_fase: float = 0.0
 var tentativas: int = 0
 var jogando: bool = false
 
-# --- HISTÓRICO DE RECORDES (Permanente) ---
-# Esta lista guarda TODOS os jogadores que já venceram
+
+#Esta lista guarda os jogadores que já venceram
 var historico_pontuacao: Array = [] 
 
-# Mudamos o nome do arquivo para não confundir com o save antigo
 const CAMINHO_SAVE = "user://leaderboard.json"
 
 func _ready():
-	# Assim que o jogo abre, já carrega a lista de recordes
 	carregar_leaderboard()
 
 func _process(delta):
-	# Cronômetro global
+	#cronômetro global
 	if jogando:
 		tempo_fase += delta
 
-# --- CONTROLE DA SESSÃO ---
+
 func iniciar_nova_partida():
 	tempo_fase = 0.0
 	tentativas = 0

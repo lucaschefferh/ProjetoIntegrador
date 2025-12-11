@@ -1,12 +1,10 @@
 extends CanvasLayer
-# ou extends Control, dependendo do seu nó raiz
 
+#script do menu de pause, funciona para mostrar o menu e redirecionar o player de acordo com a escolha dele
 func _ready():
-	# Garante que o menu comece escondido quando o jogo abrir
 	visible = false
 
 func _unhandled_input(event):
-	# Captura a tecla ESC (ui_cancel)
 	if event.is_action_pressed("ui_cancel"):
 		if visible:
 			unpause()
@@ -15,18 +13,16 @@ func _unhandled_input(event):
 
 func pause():
 	visible = true
-	get_tree().paused = true # Congela o resto do jogo
+	get_tree().paused = true 
 
 func unpause():
 	visible = false
-	get_tree().paused = false # Descongela o jogo
-
-# --- FUNÇÕES DOS BOTÕES ---
+	get_tree().paused = false 
 
 func _on_button_continuar_pressed():
 	unpause()
 
-func _on_button_menu_principal_pressed(): # Confira se o nome é esse mesmo
+func _on_button_menu_principal_pressed(): 
 	unpause() 
 	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 
@@ -35,4 +31,4 @@ func _on_button_sair_pressed():
 
 
 func _on_button_menu_pressed() -> void:
-	pass # Replace with function body.
+	pass 

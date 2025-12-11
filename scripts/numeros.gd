@@ -1,5 +1,6 @@
 extends Area2D
 
+#Script do número para o player conseguir coletar e ter limite máximo de números
 @export var value: int = 0
 var player_in_area: CharacterBody2D = null
 

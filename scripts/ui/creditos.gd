@@ -1,3 +1,4 @@
+#script para da cena de créditos voltar para o menu principal
 extends Control
 
 func _on_button_voltar_pressed():

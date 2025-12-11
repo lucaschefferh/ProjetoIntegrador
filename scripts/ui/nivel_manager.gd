@@ -1,11 +1,9 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
+#Serve para só iniciar o cronometro quando sair do tutorial
 func _ready() -> void:
-	pass # Replace with function body.
+	pass 
 	GameData.iniciar_cronometro()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
